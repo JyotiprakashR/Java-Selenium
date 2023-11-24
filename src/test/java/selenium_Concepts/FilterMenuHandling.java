@@ -22,7 +22,7 @@ public class FilterMenuHandling {
 	}
 	
 	@Test
-	private void FilterMenuHandlingTest() throws Exception {
+	private void filterMenuHandlingTest() throws Exception {
 		selectFilter("Deals", "New");
 //		selectFilter("Operating System", "Android");
 //		selectFilter("Operating System", "Android", "Other");
