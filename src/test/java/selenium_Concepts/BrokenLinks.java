@@ -1,12 +1,12 @@
 package selenium_Concepts;
 
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -35,8 +35,10 @@ public class BrokenLinks {
 	@Test
 	private void findBrokenLinks1() {
 		int j = 1;
-		ArrayList<String> arrayList = returnValidUrlList();
-		for (String eachURL : arrayList) {
+		Map<String, ArrayList<String>> validAndBrokenMap = returnValidUrlList();
+		ArrayList<String> brokenArrayList = validAndBrokenMap.get("brokenArrayList");
+		ArrayList<String> validArrayList = validAndBrokenMap.get("validArrayList");
+		for (String eachURL : validArrayList) {
 			try {
 				HttpsURLConnection httpsURLConnection = (HttpsURLConnection) new URL(eachURL).openConnection();
 				httpsURLConnection.setRequestMethod("GET");
@@ -45,22 +47,25 @@ public class BrokenLinks {
 				if (httpsURLConnection.getResponseCode() > 399) {
 					System.out.println("Broken Link--->" + httpsURLConnection.getURL() + "---->Response Code="
 							+ httpsURLConnection.getResponseCode());
+					brokenArrayList.add(httpsURLConnection.getURL().toString());
 				} else {
-					System.out.println("(" + j + ")." + httpsURLConnection.getURL() + "---->Response Code="
-							+ httpsURLConnection.getResponseCode() + " & Message="
-							+ httpsURLConnection.getResponseMessage());
+//					System.out.println("(" + j + ")." + httpsURLConnection.getURL() + "---->Response Code="
+//							+ httpsURLConnection.getResponseCode() + " & Message="
+//							+ httpsURLConnection.getResponseMessage());
 					j++;
 				}
 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
 		}
+		System.out.println("Total Broken links are "+brokenArrayList.size());
+		System.out.println("Broken links are "+brokenArrayList);
 	}
 
-	private ArrayList<String> returnValidUrlList() {
+	private Map<String, ArrayList<String>> returnValidUrlList() {
+		Map<String, ArrayList<String>> validAndBrokenMap = new HashMap<>();
 		ArrayList<String> validArrayList = new ArrayList<>();
 		ArrayList<String> brokenArrayList = new ArrayList<>();
 		List<WebElement> allLinks = getAllLinks();
@@ -82,13 +87,10 @@ public class BrokenLinks {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Invalid/Null/Broken Links are :" + brokenArrayList.size());
-		int k = 1;
-		for (String brokenLink : brokenArrayList) {
-			System.out.println("(" + k + ")." + brokenLink);
-			k++;
-		}
-		return validArrayList;
+
+		validAndBrokenMap.put("brokenArrayList", brokenArrayList);
+		validAndBrokenMap.put("validArrayList", validArrayList);
+		return validAndBrokenMap;
 	}
 
 	private List<WebElement> getAllLinks() {
