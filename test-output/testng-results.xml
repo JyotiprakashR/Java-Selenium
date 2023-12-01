@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-11-22T19:35:34Z" name="Default suite" finished-at="2023-11-22T19:35:54Z" duration-ms="19827">
+    <groups>
+    </groups>
+    <test started-at="2023-11-22T19:35:34Z" name="Default test" finished-at="2023-11-22T19:35:54Z" duration-ms="19827">
+      <class name="selenium_Concepts.FilterMenuHandling">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:selenium_Concepts.FilterMenuHandling@3de8f619]" started-at="2023-11-23T01:05:34Z" name="setUp" finished-at="2023-11-23T01:05:52Z" duration-ms="17925" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="FilterMenuHandlingTest()[pri:0, instance:selenium_Concepts.FilterMenuHandling@3de8f619]" started-at="2023-11-23T01:05:52Z" name="FilterMenuHandlingTest" finished-at="2023-11-23T01:05:54Z" duration-ms="1878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FilterMenuHandlingTest -->
+      </class> <!-- selenium_Concepts.FilterMenuHandling -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
