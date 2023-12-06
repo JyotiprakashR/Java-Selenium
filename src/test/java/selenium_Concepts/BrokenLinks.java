@@ -17,6 +17,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -24,11 +25,12 @@ public class BrokenLinks {
 
 	private WebDriver driver;
 	private String browserName = "Chrome";
+
 	private final String portalUrl = "https://www.t-mobile.com";
 
 	@BeforeTest
 	private void setUp() throws InterruptedException {
-		launchBrowser(browserName, true);
+		launchBrowser(browserName);
 		launchPortal(portalUrl);
 	}
 
@@ -60,8 +62,13 @@ public class BrokenLinks {
 			}
 
 		}
-		System.out.println("Total Broken links are "+brokenArrayList.size());
-		System.out.println("Broken links are "+brokenArrayList);
+		System.out.println("Total Broken links are " + brokenArrayList.size());
+		System.out.println("Broken links are " + brokenArrayList);
+	}
+
+	@AfterTest
+	private void tearDown() {
+		driver.quit();
 	}
 
 	private Map<String, ArrayList<String>> returnValidUrlList() {

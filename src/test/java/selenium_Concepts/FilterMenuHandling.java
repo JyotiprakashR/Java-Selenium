@@ -20,33 +20,40 @@ public class FilterMenuHandling {
 		launchBrowser(browserName);
 		launchPortal(portalUrl);
 	}
-	
+
 	@Test
 	private void filterMenuHandlingTest() throws Exception {
 		selectFilter("Deals", "New");
 //		selectFilter("Operating System", "Android");
+//		selectFilter("Deals", "New");
+//		selectFilter("Operating System", "Android")
 //		selectFilter("Operating System", "Android", "Other");
 //		selectFilter("Brands", "Apple");
 //		selectFilter("Brands", "Apple", "Samsung");
 //		selectFilter("Brands", "Apple", "Samsung", "TCL");
-//		selectFilter("Brands", "ALL");
+		selectFilter("Brands", "ALL");
 
 	}
 
 	private void selectFilter(String filterName, String... filterValue) throws Exception {
+
 		scrollTillFilter();
 		driver.findElement(By.xpath("//legend[contains(text(), '" + filterName + "')]")).click();
 		for (String eachFilterValue : filterValue) {
 			if (eachFilterValue.equalsIgnoreCase("All") && filterName.equals("Brands")) {
 				selectAllBrands();
 			} else {
-				driver.findElement(By.xpath("//span[contains(text(), '" + eachFilterValue + "') and @class='filter-display-name']")).click();
+				driver.findElement(By
+						.xpath("//span[contains(text(), '" + eachFilterValue + "') and @class='filter-display-name']"))
+						.click();
 			}
 			scrollTillFilter();
 		}
+
 	}
 
 	private void scrollTillFilter() {
+
 		JavascriptExecutor je = (JavascriptExecutor) driver;
 		je.executeScript("arguments[0].scrollIntoView({block: \"center\"});",
 				driver.findElement(By.xpath("//*[@class='heading-5 sidenav-title' and text()=' Filters ']")));
@@ -68,16 +75,18 @@ public class FilterMenuHandling {
 
 	private void launchPortal(String portalUrl) throws InterruptedException {
 		driver.get(portalUrl);
+		driver.manage().timeouts().getScriptTimeout();
 		Thread.sleep(5000);
 	}
 
 	private void selectAllBrands() {
-		int	brandSize= driver.findElements(By.xpath("//div[@role='group' and @aria-label='Brands']//mat-checkbox")).size();
+		int brandSize = driver.findElements(By.xpath("//div[@role='group' and @aria-label='Brands']//mat-checkbox"))
+				.size();
 		for (int i = 1; i <= brandSize; i++) {
 			scrollTillFilter();
-			driver.findElement(By.xpath("//div[@role='group' and @aria-label='Brands']//mat-checkbox[" + i + "]//label")).click();
+			driver.findElement(
+					By.xpath("//div[@role='group' and @aria-label='Brands']//mat-checkbox[" + i + "]//label")).click();
 		}
-
 	}
 
 }
