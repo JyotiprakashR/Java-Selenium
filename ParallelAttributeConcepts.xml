@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ParallelAttributeConcept1-2-2_Suite" parallel="tests" thread-count="3">
+	<test name="ParallelAttributeConcept1-2-3_Test--1" parallel="methods" thread-count="3" >
+		<classes>
+			<class name="testNG_Concepts.ParallelAttributeConcept1" />
+		</classes>
+	</test>
+	<test name="ParallelAttributeConcept1-2-3_Test-2" parallel="methods" thread-count="3">
+		<classes>
+			<class name="testNG_Concepts.ParallelAttributeConcept2" />
+		</classes>
+	</test>
+	<test name="ParallelAttributeConcept1-2-3_Test-3" parallel="methods" thread-count="3">
+		<classes>
+			<class name="testNG_Concepts.ParallelAttributeConcept3" />
+		</classes>
+	</test>
+</suite>
+
+<!-- Here only one thread will be opening despite of thread-count is set to more
+than 1. Below is the O/P-->
+
+<!-- Here only one thread will be opening despite of thread-count is set to more than 1. Bcz Parallel 
+attribute is set to "none" & same goes for "False". Below is the O/P-->
+
+<!--parallel="tests" thread-count="-1 == Will throw error IllegalArgumentException-->
+<!--parallel="none" thread-count="-1 == Sequence execution, so only one thread-->
+<!--parallel="none" thread-count="1 == Sequence execution, so only one thread-->
+<!--parallel="false" thread-count="1 == Sequence execution, so only one thread-->
+
+<!--
+Class-ParallelAttributeConcept1 || Method-testMethod1 || Thread-Id==1
+Class-ParallelAttributeConcept1 || Method-testMethod2 || Thread-Id==1
+Class-ParallelAttributeConcept1 || Method-testMethod3 || Thread-Id==1
+Class-ParallelAttributeConcept1 || Method-testMethod4 || Thread-Id==1
+Class-ParallelAttributeConcept1 || Method-testMethod5 || Thread-Id==1
+Class-ParallelAttributeConcept1 || Method-testMethod6 || Thread-Id==1
+Class-ParallelAttributeConcept2 || Method-testMethod1 || Thread-Id==1
+Class-ParallelAttributeConcept2 || Method-testMethod2 || Thread-Id==1
+Class-ParallelAttributeConcept2 || Method-testMethod3 || Thread-Id==1
+Class-ParallelAttributeConcept2 || Method-testMethod4 || Thread-Id==1
+Class-ParallelAttributeConcept2 || Method-testMethod5 || Thread-Id==1
+Class-ParallelAttributeConcept2 || Method-testMethod6 || Thread-Id==1
+Class-ParallelAttributeConcept3 || Method-testMethod1 || Thread-Id==1
+Class-ParallelAttributeConcept3 || Method-testMethod2 || Thread-Id==1
+Class-ParallelAttributeConcept3 || Method-testMethod3 || Thread-Id==1
+Class-ParallelAttributeConcept3 || Method-testMethod4 || Thread-Id==1
+Class-ParallelAttributeConcept3 || Method-testMethod5 || Thread-Id==1
+Class-ParallelAttributeConcept3 || Method-testMethod6 || Thread-Id==1
+
+-->
