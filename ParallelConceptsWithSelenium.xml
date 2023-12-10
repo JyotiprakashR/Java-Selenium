@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Suite Test" >
+	<test name="Parallel Test for Methods1" parallel="methods" thread-count="4">
+		<classes>
+			<class name="testNG_Concepts.ParallelConceptsWithSelenium" />
+		</classes>
+	</test>
+</suite> <!--
+Parallel Suite Test -->

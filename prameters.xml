@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="name" data-provider-thread-count="2">
+	<test name="" thread-count="2"> 
+	<classes>
+		<class name="selenium_Concepts.HandleDisSeaBoxOrDropDownEleusingDebugger" />
+		<class name="testNG_Concepts.TestNG_Annotations" />
+		<class name="selenium_Concepts.Launch_Browser" />
+		<class name="testNG_Concepts.FactoryAnnotationConcept" />
+		<class name="selenium_Concepts.FilterMenuHandling" />
+		<class name="java_Concepts.ArrayConcepts" />
+		<class name="selenium_Concepts.BrokenLinks" />
+	</classes>
+	</test>
+</suite>
