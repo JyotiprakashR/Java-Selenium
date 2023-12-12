@@ -1,5 +1,9 @@
 package testNG_Concepts;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +12,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.annotations.DataProvider;
@@ -219,9 +225,90 @@ public class DataProviderAndMapConcepts {
 				+ emp.getId());
 
 	}
-	
-	public void testqq(Method m) {
-		
+
+	// ---------------------------------------------------------------------------------//
+	@DataProvider(name = "testData7", parallel = true, indices = {1,2}) // // here we can use one-D/2-D object Array
+	public Object[] getData7() {		// indices = {1,2}--means only 1 & 2index values will be given by @Dataprovider to @Test method
+		Object[] data = null;
+
+		try {
+			// reading file from directory, reading workbook & sheet
+			System.out.println("userDirectory--" + System.getProperty("user.dir"));
+			File file = new File(System.getProperty("user.dir") + "/src/test/resources/excelFiles/testdata.xlsx");
+			FileInputStream fis = new FileInputStream(file);
+			XSSFWorkbook wb = new XSSFWorkbook(fis);
+			XSSFSheet sheet = wb.getSheet("Sheet2");
+
+			// reading no of rows & cols
+			System.out.println("getPhysicalNumberOfRows--" + sheet.getPhysicalNumberOfRows());
+			int totalNoOfRows = sheet.getLastRowNum();
+			System.out.println("getLastRowNum--" + totalNoOfRows);
+			int totalNoOfCols = sheet.getRow(0).getLastCellNum();
+			System.out.println("getLastCellNum--" + totalNoOfCols);
+			data = new Object[totalNoOfRows];
+			for (int i = 0; i < totalNoOfRows; i++) {
+				Map<String, String> map = new LinkedHashMap<>();
+				for (int j = 0; j < totalNoOfCols; j++) {
+					map.put(sheet.getRow(0).getCell(j).toString(), sheet.getRow(i + 1).getCell(j).toString());
+				}
+				data[i] = map;
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("print");
+		}
+		return data;
+
+	}
+
+	@DataProvider(name = "testData6", parallel = false)
+	public Object[][] getData6() { // // here we can use one-D/2-D object Array
+		Object[][] data = null;
+
+		try {
+			// reading file from directory, reading workbook & sheet
+			System.out.println("userDirectory--" + System.getProperty("user.dir"));
+			File file = new File(System.getProperty("user.dir") + "/src/test/resources/excelFiles/testdata.xlsx");
+			FileInputStream fis = new FileInputStream(file);
+			XSSFWorkbook wb = new XSSFWorkbook(fis);
+			XSSFSheet sheet = wb.getSheet("Sheet2");
+
+			// reading no of rows & cols
+			System.out.println("getPhysicalNumberOfRows--" + sheet.getPhysicalNumberOfRows());
+			int totalNoOfRows = sheet.getLastRowNum();
+			System.out.println("getLastRowNum--" + totalNoOfRows);
+			int totalNoOfCols = sheet.getRow(0).getLastCellNum();
+			System.out.println("getLastCellNum--" + totalNoOfCols);
+			data = new Object[totalNoOfRows][1];
+			for (int i = 0; i < totalNoOfRows; i++) {
+				Map<String, String> map = new LinkedHashMap<>();
+				for (int j = 0; j < totalNoOfCols; j++) {
+					map.put(sheet.getRow(0).getCell(j).toString(), sheet.getRow(i + 1).getCell(j).toString());
+				}
+				data[i][0] = map;
+			}
+
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("print");
+		}
+		return data;
+
+	}
+
+	@Test(dataProvider = "testData6") // here we can use one-D/2-D object Array
+	public void method15(LinkedHashMap<String, String> map) {
+		for (Entry<String, String> entr : map.entrySet()) {
+			System.out.println(entr);
+		}
+		System.out.println("Thread iD--" + Thread.currentThread().getId());
 	}
 
 }
