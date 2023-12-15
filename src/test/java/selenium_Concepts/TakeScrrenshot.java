@@ -32,6 +32,7 @@ public class TakeScrrenshot {
 				e.printStackTrace();
 			}
 		}
+		driver.quit();
 	}
 
 }

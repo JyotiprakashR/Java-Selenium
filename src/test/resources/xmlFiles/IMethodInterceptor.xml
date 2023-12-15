@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="IMethodInterceptor Suite">
+	<listeners>
+		<listener class-name="testNG_Concepts.ListenersConcept"></listener>
+	</listeners>
+  <test name="IMethodInterceptor Test">
+	  <classes>
+		  <class name="selenium_Concepts.ListenersClassTest"></class>
+	  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

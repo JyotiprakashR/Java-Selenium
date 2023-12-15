@@ -5,6 +5,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -37,9 +39,10 @@ public class BrokenLinks {
 	@Test
 	private void findBrokenLinks1() {
 		int j = 1;
-		Map<String, ArrayList<String>> validAndBrokenMap = returnValidUrlList();
-		ArrayList<String> brokenArrayList = validAndBrokenMap.get("brokenArrayList");
-		ArrayList<String> validArrayList = validAndBrokenMap.get("validArrayList");
+		
+		Map<String, LinkedList<String>> validAndBrokenMap = returnValidUrlList();
+		LinkedList<String> brokenArrayList = validAndBrokenMap.get("brokenArrayList");
+		LinkedList<String> validArrayList = validAndBrokenMap.get("validArrayList");
 		for (String eachURL : validArrayList) {
 			try {
 				HttpsURLConnection httpsURLConnection = (HttpsURLConnection) new URL(eachURL).openConnection();
@@ -71,10 +74,10 @@ public class BrokenLinks {
 		driver.quit();
 	}
 
-	private Map<String, ArrayList<String>> returnValidUrlList() {
-		Map<String, ArrayList<String>> validAndBrokenMap = new HashMap<>();
-		ArrayList<String> validArrayList = new ArrayList<>();
-		ArrayList<String> brokenArrayList = new ArrayList<>();
+	private Map<String, LinkedList<String>> returnValidUrlList() {
+		Map<String, LinkedList<String>> validAndBrokenMap = new LinkedHashMap<>();
+		LinkedList<String> validArrayList = new LinkedList<>();
+		LinkedList<String> brokenArrayList = new LinkedList<>();
 		List<WebElement> allLinks = getAllLinks();
 		for (WebElement eachLink : allLinks) {
 			try {
