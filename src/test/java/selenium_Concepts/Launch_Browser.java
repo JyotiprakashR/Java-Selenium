@@ -41,6 +41,6 @@ public class Launch_Browser {
 	public void Launch_BrowserTest2() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://google.co.in");
-
+		driver.quit();
 	}
 }

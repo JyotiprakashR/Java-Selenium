@@ -1,6 +1,7 @@
 package string_Buffer_Builder;
 
 import java.util.Scanner;
+import java.util.stream.IntStream;
 
 public class String_Buffer_Class {
 	
@@ -132,10 +133,10 @@ public class String_Buffer_Class {
 		System.out.println(name1.indexOf(97));
 		
 		Scanner sca= new Scanner(System.in);
-//		System.out.println("Enter your city name: ");
-//		String enteredName=sca.nextLine();
-//		System.out.println("you entered : "+enteredName);
-//		sca.close();
+		System.out.println("Enter your city name: ");
+		String enteredName=(String) sca.nextLine();
+		System.out.println("you entered : "+enteredName.toLowerCase());
+		sca.close();
 		
 //		Scanner sca1= new Scanner(System.in);
 //		System.out.println("Enter name:--");
@@ -172,6 +173,54 @@ public class String_Buffer_Class {
 		System.out.println(st5==st8);// false
 		System.out.println("-----------------------------------------------------------");
 		System.out.println(" ".isEmpty());
+		
+		
+		
+		
+		// 	StringBuffer
+		System.out.println("--------StringBuffer--------------------");
+		StringBuffer sBuffer= new StringBuffer();
+		
+		System.out.println(sBuffer.capacity()); //16
+		
+		StringBuffer sBufferr= new StringBuffer("durga");
+		System.out.println(sBufferr.capacity()); //21, how--length of String+16
+		
+		
+		// StringBuilder
+		System.out.println("--------StringBuilder--------------------");
+		StringBuilder sbuilder = new StringBuilder();
+		
+		
+		// String
+		System.out.println("--------String--------------------");
+		
+		
+		String stringValue="Welcome to";
+		
+		IntStream s11=stringValue.chars();	// Returns a stream of int char values from this sequence.
+		s11.forEach(e->System.out.println(e));
+		System.out.println("--------");
+		System.out.println(stringValue.compareTo("Welcome to"));
+		System.out.println("--------");
+		System.out.println(stringValue.contentEquals("Welcome"));
+		System.out.println("--------");
+		System.out.println(stringValue.contentEquals(new StringBuffer("Welcome")));
+		System.out.println("--------");
+		System.out.println(stringValue.endsWith("to"));
+		System.out.println("--------");
+		System.out.println(stringValue.formatted("a", "b"));
+		System.out.println("--------+");
+		stringValue.lines().forEach(e->System.out.println(e));
+		stringValue.lines().distinct().toList().forEach(e->System.out.println(e));
+		
+		System.out.println(stringValue.matches("elcome to"));
+		
+		String stringValueNew=stringValue.repeat(2);
+		System.out.println(stringValueNew);
+		
+		System.out.println(stringValue.strip());
+		
 		
 		
 	}
