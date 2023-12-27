@@ -186,6 +186,20 @@
 			<artifactId>json-simple</artifactId>
 			<version>1.1.1</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.github.scribejava/scribejava -->
+		<dependency>
+			<groupId>com.github.scribejava</groupId>
+			<artifactId>scribejava</artifactId>
+			<version>5.1.0</version>
+			<type>pom</type>
+		</dependency>
+		<!--
+		https://mvnrepository.com/artifact/com.creditdatamw.labs/zerocell-core -->
+		<dependency>
+			<groupId>com.creditdatamw.labs</groupId>
+			<artifactId>zerocell-core</artifactId>
+			<version>0.5.1</version>
+		</dependency>
 
 
 		<!--https://mvnrepository.com/artifact/com.relevantcodes/extentreports-->

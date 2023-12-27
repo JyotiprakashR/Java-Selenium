@@ -20,6 +20,8 @@ public class MapInterf {
 		map.put(null, 70);
 		map.put(null, 63);
 
+		
+		
 		System.out.println(map);
 
 		System.out.println("---------------");
