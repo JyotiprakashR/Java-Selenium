@@ -5,8 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.HashMap;
 import java.util.List;
 
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import com.google.gson.JsonArray;

@@ -5,7 +5,7 @@ import com.github.javafaker.Faker;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
-public class QueryParam {
+public class FakerClass {
 	
 	
 	public static void main(String a[]) {
