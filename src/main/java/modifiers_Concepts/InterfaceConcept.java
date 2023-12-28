@@ -1,5 +1,7 @@
 package modifiers_Concepts;
 
+
+@FunctionalInterface
 public interface InterfaceConcept {
 	
 	

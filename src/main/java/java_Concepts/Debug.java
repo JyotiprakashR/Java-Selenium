@@ -1,3 +1,5 @@
+package java_Concepts;
+
 import static java.lang.annotation.ElementType.CONSTRUCTOR;
 import static java.lang.annotation.ElementType.LOCAL_VARIABLE;
 import static java.lang.annotation.ElementType.METHOD;
@@ -11,15 +13,10 @@ import java.lang.annotation.Target;
 
 @Documented
 @Retention(CLASS)
-@Target({METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, TYPE_USE})
-/**
- * 
- */
-
-/**
- * @author Prakash
- *
- */
-public @interface customAnnotation {
+@Target({ METHOD, PARAMETER, CONSTRUCTOR, LOCAL_VARIABLE, TYPE_USE })
+public @interface Debug {
+	
+	// Custom Annotation learning
+	//public static void start();
 
 }

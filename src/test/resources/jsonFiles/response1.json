@@ -1,0 +1,163 @@
+{
+  "responseHeader": {
+    "transactionDateTime": "2023-10-02T11:11:58.770Z",
+    "correlationId": "RVNIKBG56789013",
+    "businessTransactionSequenceId": "DSSAe3f1e355e94d0db2846f4e0"
+  },
+  "responseData": {
+    "standardizedBillingAddress": {
+      "zip": "30606",
+      "country": "US",
+      "city": "ATHENS",
+      "latitude": "0.0",
+      "street1": "320 QIASH AZFQ WAY",
+      "state": "GA",
+      "overrideAddress": true,
+      "longitude": "0.0"
+    },
+    "partnerResponseMessageList": [
+      {
+        "language": "en",
+        "partnerResponseMessage": "Your address qualifies for HughesNet Voice service with a local phone number.  You have the option to port your current phone number if it is a local phone number (Q-700). Code PIM 3058 : 311130068"
+      }
+    ],
+    "partnerResponseCode": "3058",
+    "standardizedInstallationAddress": {
+      "zip": "20871-3414",
+      "rbdi": "Residential",
+      "country": "US",
+      "city": "Clarksburg",
+      "latitude": "39.217876",
+      "county": "Montgomery",
+      "street1": "22018 Plover St",
+      "state": "MD",
+      "overrideAddress": false,
+      "longitude": "-77.28219"
+    },
+    "productList": [
+      {
+        "planServiceOfferings": [
+          {
+            "planName": "Hardware(2X00_P)",
+            "serviceOfferingName": "Hardware(2X00_P)"
+          },
+          {
+            "planName": "Installation(2X00_P)",
+            "serviceOfferingName": "Installation(P)"
+          },
+          {
+            "planName": "Service Commitment(New)",
+            "serviceOfferingName": "24 Month Service Commitment(New)"
+          },
+          {
+            "planName": "Customer ID NAD General",
+            "serviceOfferingName": "Customer Id NAD General"
+          },
+          {
+            "planName": "J1 Transport Plan",
+            "serviceOfferingName": "JU Transport Deal"
+          }
+        ],
+        "programCode": "5141KEPC01",
+        "packageName": "HNS Offer_119P"
+      },
+      {
+        "planServiceOfferings": [
+          {
+            "planName": "SME Hardware(2X00_P)",
+            "serviceOfferingName": "Hardware(2X00_P_SME)"
+          },
+          {
+            "planName": "SME Installation(2X00_P)",
+            "serviceOfferingName": "Installation(2X00_P_SME)"
+          },
+          {
+            "planName": "SME Remote Maintenance(Gen5)",
+            "serviceOfferingName": "SME RM Premium Express Repair(0.00)"
+          },
+          {
+            "planName": "SME Customer Id",
+            "serviceOfferingName": "Customer Id SME General"
+          },
+          {
+            "planName": "SME JU Move",
+            "serviceOfferingName": "SME JU Move Flag"
+          },
+          {
+            "planName": "SME KE Service Commitment(New)",
+            "serviceOfferingName": "24 Month Service Commitment(SME_New_P)"
+          },
+          {
+            "planName": "SME J2 Transport Plan",
+            "serviceOfferingName": "JU Transport Deal"
+          },
+          {
+            "planName": "SME Order Offer Credit_03P",
+            "serviceOfferingName": "SME Prepaid Card Rebate"
+          }
+        ],
+        "programCode": "5141KEPCBI",
+        "packageName": "SME Offer_120P"
+      },
+      {
+        "planServiceOfferings": [
+          {
+            "planName": "Service Commitment(New)",
+            "serviceOfferingName": "24 Month Service Commitment(New)"
+          },
+          {
+            "planName": "Fusion Hardware(P)",
+            "serviceOfferingName": "Hardware(WL3XXX_P)"
+          },
+          {
+            "planName": "Installation(2X00_P)",
+            "serviceOfferingName": "Installation(P)"
+          },
+          {
+            "planName": "J2 Transport Plan",
+            "serviceOfferingName": "JU Transport Deal"
+          }
+        ],
+        "programCode": "5141KEPC01",
+        "packageName": "HNS Offer_01P_Fusion"
+      },
+      {
+        "planServiceOfferings": [
+          {
+            "planName": "SME Fusion Hardware(P)",
+            "serviceOfferingName": "Hardware(WL3XXX_P_BI)"
+          },
+          {
+            "planName": "SME Installation(2X00_P)",
+            "serviceOfferingName": "Installation(2X00_P_SME)"
+          },
+          {
+            "planName": "SME Remote Maintenance(Gen5)",
+            "serviceOfferingName": "SME RM Premium Express Repair(0.00)"
+          },
+          {
+            "planName": "SME JU Move",
+            "serviceOfferingName": "SME JU Move Flag"
+          },
+          {
+            "planName": "SME J1 Transport Plan",
+            "serviceOfferingName": "JU Transport Deal"
+          },
+          {
+            "planName": "SME Order Offer Credit_03P",
+            "serviceOfferingName": "SME Prepaid Card Rebate"
+          },
+          {
+            "planName": "SME KE Service Commitment(New)",
+            "serviceOfferingName": "24 Month Service Commitment(SME_New_P)"
+          }
+        ],
+        "programCode": "5141KEPCBI",
+        "packageName": "SME Offer_01P_Fusion"
+      }
+    ]
+  },
+  "responseCode": "200.02.3058",
+  "responseMessage": "Your address qualifies for HughesNet Voice service with a local phone number.  You have the option to port your current phone number if it is a local phone number (Q-700). Code PIM 3058 : 311130068",
+  "transactionSequenceId": "RVNIKBG56789013"
+}
