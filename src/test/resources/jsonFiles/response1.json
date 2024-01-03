@@ -23,16 +23,16 @@
     ],
     "partnerResponseCode": "3058",
     "standardizedInstallationAddress": {
-      "zip": "20871-3414",
-      "rbdi": "Residential",
-      "country": "US",
       "city": "Clarksburg",
-      "latitude": "39.217876",
-      "county": "Montgomery",
-      "street1": "22018 Plover St",
-      "state": "MD",
-      "overrideAddress": false,
-      "longitude": "-77.28219"
+            "country": "US",
+            "county": "Montgomery",
+            "latitude": "39.217876",
+            "longitude": "-77.28219",
+            "overrideAddress": false,
+            "rbdi": "Residential",
+            "state": "MD",
+            "street1": "22018 Plover St",
+            "zip": "20871-3414"
     },
     "productList": [
       {
