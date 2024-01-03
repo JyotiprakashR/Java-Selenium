@@ -3,6 +3,7 @@ package restAssuredUtil;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -179,6 +180,24 @@ public class ReadJson {
 		JSONArray ja=jObject.toJSONArray(jArry);
 		
 		
+		JSONArray jsa=new JSONArray();
+		jsa.put(0, 12);
+		String str=jsa.join("$");
+		System.out.println(str);
+
+
+
 	}
+
+
+
+	//public static void main(String[] args) { type main....IntelliJ will show the preferences
+	// System.out.println(); // sout
+	//cwd--it will print current woring directory...i.e. System.getProperty("user.dir")
+
+	// }
+
+
+
 
 }
