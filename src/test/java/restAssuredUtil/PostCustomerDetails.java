@@ -1,5 +1,6 @@
 package restAssuredUtil;
 
+import org.json.JSONObject;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
@@ -35,6 +36,6 @@ public class PostCustomerDetails {
 	}
 	
 	// 1st approach
-	
+	JSONObject obj= new JSONObject();
 	
 }
