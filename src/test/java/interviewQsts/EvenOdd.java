@@ -7,6 +7,8 @@ public class EvenOdd {
 		isEvenOrOdd(0);
 		isEvenOrOdd(3);
 		isEvenOrOdd(20);
+		
+		
 
 	}
 
@@ -25,3 +27,6 @@ public class EvenOdd {
 	}
 
 }
+
+//OOPsImplementionInFramework
+//OOPs_Impl_Fwk

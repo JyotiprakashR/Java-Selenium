@@ -10,6 +10,7 @@ public class FinalizeConcept {
 		
 	}
 	
+	@Override
 	public void finalize() {
 		System.out.println("finalize method is overridden");
 	}

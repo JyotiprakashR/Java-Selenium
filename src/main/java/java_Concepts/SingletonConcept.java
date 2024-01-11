@@ -28,7 +28,7 @@ public class SingletonConcept {
 		System.out.println(sc1.name);
 		System.out.println(sc2.name);
 		
-		//Runtime
+		//Runtime class in java example of Singleton pattern
 		
 	}
 
